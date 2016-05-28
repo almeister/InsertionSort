@@ -25,18 +25,8 @@ class ArrayGenerationTests(unittest.TestCase):
         print(*self.randomNumbers, sep='\n')
 
     def test_print_all_numbers(self):
-        self.print("Numbers:")
+        self.print("Print Numbers:")
         self.assertTrue(True)
-
-    def test_sort_first_two_elements(self):
-        self.randomNumbers[0] = 69
-        self.randomNumbers[1] = 68
-
-        self.print("Unsorted Numbers:")
-        self.sorter.sort(self.randomNumbers)
-        self.print("Sorted Numbers:")
-
-        self.assertTrue(self.randomNumbers[1] >= self.randomNumbers[0])
 
     def test_sort_numbers(self):
         self.print("Unsorted Numbers:")

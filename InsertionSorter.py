@@ -15,4 +15,8 @@ class InsertionSorter(object):
             if iComp >= 0:
                 if numbers[iComp] > number:
                     numbers[iComp + 1] = numbers[iComp]
-                    numbers[iComp] = number
+                else:
+                    numbers[iComp + 1] = number
+                    return
+
+        numbers[0] = number
