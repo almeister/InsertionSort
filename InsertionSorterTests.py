@@ -4,7 +4,7 @@ from InsertionSorter import InsertionSorter
 
 
 class ArrayGenerationTests(unittest.TestCase):
-    NUMBER_OF_NUMBERS = 5
+    NUMBER_OF_NUMBERS = 10
 
     def setUp(self):
         self.randomNumbers = [0] * self.NUMBER_OF_NUMBERS
@@ -13,9 +13,11 @@ class ArrayGenerationTests(unittest.TestCase):
         for index, number in enumerate(self.randomNumbers):
             self.randomNumbers[index] = random.randint(0, 100)
 
+    @unittest.skip('Skipped generation of numbers test')
     def test_number_of_random_numbers_generated(self):
         self.assertEqual(len(self.randomNumbers), self.NUMBER_OF_NUMBERS, "Number of elements in array was not correct.")
 
+    @unittest.skip('Skipped unsigned numbers test')
     def test_numbers_all_unsigned(self):
         for n in self.randomNumbers:
             self.assertTrue(n >= 0)
@@ -24,14 +26,15 @@ class ArrayGenerationTests(unittest.TestCase):
         print(message)
         print(*self.randomNumbers, sep='\n')
 
+    @unittest.skip('Skipped print numbers test')
     def test_print_all_numbers(self):
-        self.print("Print Numbers:")
+        self.print('Print Numbers:')
         self.assertTrue(True)
 
     def test_sort_numbers(self):
-        self.print("Unsorted Numbers:")
+        # self.print("Unsorted Numbers:")
         self.sorter.sort(self.randomNumbers)
-        self.print("Sorted Numbers:")
+        # self.print("Sorted Numbers:")
         previousNumber = 0
 
         for i, n in enumerate(self.randomNumbers):
